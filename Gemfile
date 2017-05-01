@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13.0'
   gem 'factory_girl_rails'
   gem 'selenium-webdriver'
+  gem 'faker'
 end
 
 group :development do
@@ -59,3 +60,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # env
 gem 'dotenv-rails'
+
