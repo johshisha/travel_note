@@ -45,4 +45,16 @@ RSpec.describe User, type: :model do
     user.save
     expect(user.reload.email).to eq(mixed_case_email.downcase)
   end
+  
+  it 'is not valid with blank password' do
+    user = build(:user)
+    user.password = user.password_confirmation = " " * 6
+    expect(user).to_not be_valid
+  end
+  
+  it 'should have password more than minimum length' do
+    user = build(:user)
+    user.password = user.password_confirmation = "a" * 5
+    expect(user).to_not be_valid
+  end
 end
