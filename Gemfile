@@ -64,3 +64,7 @@ gem 'dotenv-rails'
 
 # jquery
 gem 'jquery-rails'
+
+# google maps
+gem 'gmaps4rails'
+gem "geocoder"
