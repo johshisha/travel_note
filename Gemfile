@@ -61,3 +61,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # env
 gem 'dotenv-rails'
+
+# jquery
+gem 'jquery-rails'
