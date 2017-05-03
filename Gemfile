@@ -73,3 +73,6 @@ gem "geocoder"
 # datetimepicker
 gem 'momentjs-rails', '>= 2.8.1'
 gem 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
+
+# semantic ui
+gem 'semantic-ui-sass', '~> 0.13.0.0'

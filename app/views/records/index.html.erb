@@ -1,44 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Records</h1>
+<h1>旅の記録</h1>
+<div class="map-index jumbotron"></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>User</th>
-      <th>Description</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="five column doubling ui grid">
+<% @records.each do |record| %>
+    <div class="column">
+      <a href="<%= record_path(record) %>">
+        <div class="ui vertical fluid menu">
+          <div class="header item">
+            <%= record.title %>
+          </div>
+          <div class="item">
+            <img alt='image'>
+          </div>
+        </div>
+      </a>
+    </div>
+<% end %>
+</div>
 
-  <tbody>
-    <% @records.each do |record| %>
-      <tr>
-        <td><%= record.title %></td>
-        <td><%= record.user %></td>
-        <td><%= record.description %></td>
-        <td><%= record.latitude %></td>
-        <td><%= record.longitude %></td>
-        <td><%= record.start_date %></td>
-        <td><%= record.end_date %></td>
-        <td><%= record.url %></td>
-        <td><%= link_to 'Show', record %></td>
-        <td><%= link_to 'Edit', edit_record_path(record) %></td>
-        <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Record', new_record_path %>
-
-
-<div class="map-index"></div>
+<%= button_to '新しい記録を作成する', new_record_path %>
