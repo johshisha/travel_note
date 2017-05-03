@@ -31,7 +31,7 @@ window.triggerMap = ->
             showMarker:   false,
             draggable:    false,
             controller:   'records',
-            titleField:   'name'
+            titleField:   'title'
           }, data)
     )
     
@@ -62,7 +62,7 @@ window.triggerMap = ->
         addressInput:   $('.address'), #could be multiple
         latInput:       $('#record_latitude'),
         lngInput:       $('#record_longitude'),
-        zoom:           10
+        zoom:           8
         #scaleControl: ,
         #scrollwheel: ,
         #showMarker: ,

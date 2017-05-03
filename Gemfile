@@ -64,7 +64,12 @@ gem 'dotenv-rails'
 
 # jquery
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # google maps
 gem 'gmaps4rails'
 gem "geocoder"
+
+# datetimepicker
+gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
