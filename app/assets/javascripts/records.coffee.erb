@@ -24,15 +24,28 @@ window.triggerMap = ->
       if data.length
         MapHelper.showMapWithMarkers($('.map-index').get(0),
           {
-            mapHeight:    400,
+            mapHeight:    500,
             mapLat:       data[0].latitude,  #center
             mapLng:       data[0].longitude, #center
-            zoom:         2,
+            zoom:         5,
             showMarker:   false,
             draggable:    false,
             controller:   'records',
             titleField:   'title'
           }, data)
+      else
+        MapHelper.showMap($('.map-index').get(0),
+          {
+            mapHeight:      500,
+            mapLat:         37.9025518,
+            mapLng:         139.02309460000004,
+            zoom:           5
+            #scaleControl: ,
+            #scrollwheel: ,
+            showMarker: false,
+            #draggable: ,
+          }
+        )
     )
     
   # --- show --- #
