@@ -29,7 +29,6 @@ class RecordsController < ApplicationController
   # POST /records.json
   def create
     @record = Record.new(record_params)
-
     respond_to do |format|
       if @record.save
         format.html { redirect_to @record, notice: 'Record was successfully created.' }
@@ -73,6 +72,8 @@ class RecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:title, :user_id, :description, :latitude, :longitude, :start_date, :end_date, :url)
+      ret = params.require(:record).permit(:title, :description, :latitude, :longitude, :start_date, :end_date, :url).to_hash
+      ret.store("user_id", current_user.id)
+      ret
     end
 end
