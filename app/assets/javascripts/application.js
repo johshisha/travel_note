@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require bootstrap
-//= require turbolinks
 //= require underscore
 //= require gmaps/google
 //= require map_helper/map_helper
