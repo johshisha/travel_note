@@ -25,15 +25,17 @@
     <%= form.label :description %>
     <%= form.text_area :description, id: :record_description %>
   </div>
-
+  
   <div class="field">
-    <%= form.label :latitude %>
-    <%= form.text_field :latitude, id: :record_latitude %>
-  </div>
-
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude, id: :record_longitude %>
+    <%= form.label :address %><br>
+    <%= form.text_field :address, class: "address" %>
+    <%= link_to "SEARCH", "#", class: "map-search-button" %>
+    <div class="map-canvas" style="height: 0;"
+                data-lat="<%= form.object.latitude %>"
+                data-lng="<%= form.object.longitude %>">
+    </div>
+    <%= form.text_field :latitude, id: :record_latitude, readonly: true %>
+    <%= form.text_field :longitude, id: :record_longitude,readonly: true %>
   </div>
 
   <div class="field">

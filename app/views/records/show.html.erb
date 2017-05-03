@@ -42,3 +42,8 @@
 
 <%= link_to 'Edit', edit_record_path(@record) %> |
 <%= link_to 'Back', records_path %>
+
+<div class="map-show-canvas"
+            data-latitude="<%= @record.latitude %>"
+            data-longitude="<%= @record.longitude %>">
+</div>
