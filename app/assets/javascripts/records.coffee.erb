@@ -4,15 +4,12 @@
 ready = ->
 
   if !window.google
-
-  # if !window.google.maps (if you are useing other google api)
-
     script = document.createElement('script')
     script.type = 'text/javascript';
     script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+                  "key=<%= ENV['MAP_API_KEY'] %>&" +
                   'language=ja&callback=triggerMap'
     document.body.appendChild(script)
-
   else
     triggerMap()
 
