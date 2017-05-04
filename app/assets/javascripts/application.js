@@ -16,7 +16,7 @@
 //= require bootstrap
 //= require moment
 //= require bootstrap-datetimepicker
-//= require underscore
+//= require underscore-min
 //= require gmaps/google
 //= require map_helper/map_helper
 //= require map_helper/markerclusterer
