@@ -21,3 +21,6 @@ vendor/bundle
 
 # Ignore secret
 .env
+
+# Ignore precompiled files
+public/assets
