@@ -86,10 +86,12 @@ class RecordsController < ApplicationController
     def record_params
       ret = params.require(:record).permit(:title, :description, :latitude, :longitude, :start_date, :end_date, :url, :image)
       ret[:user_id] = current_user.id
-      magick_image = Magick::Image.from_blob(ret[:image].read).shift
+      if img = ret[:image]
+        magick_image = Magick::Image.from_blob(img.read).shift
+        size = 150
+        ret[:thumbnail] = create_square_image(magick_image, size).to_blob
+      end
       ret.delete(:image)
-      size = 150
-      ret[:thumbnail] = create_square_image(magick_image, size).to_blob
       ret
     end
 end
