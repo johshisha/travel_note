@@ -36,12 +36,14 @@
     <%= form.text_field :longitude, id: :record_longitude, style: 'display:none' %>
   </div>
   
+  <br>
+  
   <div class="field">
     <%= form.label :description, "記録" %>
     <%= form.text_area :description, id: :record_description, rows: 10 %>
   </div>
 
   <div class="actions">
-    <%= form.submit '作成する' %>
+    <%= form.submit %>
   </div>
 <% end %>

@@ -32,5 +32,6 @@
 en:
   helpers:
     submit:
-      create: "Create"
-      update: "Update"
+      record:
+        create: "記録を作成する"
+        update: "記録を更新する"

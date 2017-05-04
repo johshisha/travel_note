@@ -22,5 +22,10 @@
             data-longitude="<%= @record.longitude %>">
 </div>
 
-<%= link_to 'Edit', edit_record_path(@record) %> |
-<%= link_to 'Back', records_path %>
+<br>
+
+<div class="center top-textarea">
+  <%= link_to 'Edit', edit_record_path(@record) %> |
+  <%= link_to 'Back', records_path %> |
+  <%= link_to 'Delete', @record, method: :delete %>
+</div>
