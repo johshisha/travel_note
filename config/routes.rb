@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :records
+  resources :records do
+    member do
+      get :thumbnail
+    end
+  end
   resources :users
   
   root 'static_pages#home'

@@ -18,6 +18,11 @@
   </div>
   
   <div class="field">
+    <span class="field_text">サムネイル：</span>
+    <%= form.file_field :image %><br>
+  </div>
+  
+  <div class="field">
     <span class="field_text">*場所：</span>
     <%= form.text_field :address, class: "address address_field" %>
     <button type="button" class="map-search-button btn btn-sm">検索

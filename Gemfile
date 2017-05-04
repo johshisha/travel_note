@@ -76,3 +76,9 @@ gem 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
 
 # semantic ui
 gem 'semantic-ui-sass', '~> 0.13.0.0'
+
+# thumbnail uploade
+# http://qiita.com/Kaisyou/items/5add9d8b38177c45333c
+# install error solusion: https://github.com/rmagick/rmagick/issues/256#issuecomment-273114453
+gem 'carrierwave'
+gem 'rmagick'

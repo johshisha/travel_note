@@ -12,7 +12,7 @@
             <%= record.title %>
           </div>
           <div class="item">
-            <img alt='image'>
+            <%= image_tag thumbnail_record_path(record), alt: record.title, size: "150x150" %>
           </div>
         </div>
       </a>
@@ -20,4 +20,4 @@
 <% end %>
 </div>
 
-<%= button_to '新しい記録を作成する', new_record_path %>
+<%= button_to '新しい記録を作成する', new_record_path, method: 'get' %>
