@@ -21,6 +21,7 @@ vendor/bundle
 
 # Ignore secret
 .env
+dockers/db/password.yml
 
 # Ignore precompiled files
 public/assets
