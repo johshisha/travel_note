@@ -1,0 +1,46 @@
+version: '2'
+volumes:
+  development_db:
+    driver: 'local'
+networks:
+  docker-net:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.25.0.0/24
+services:
+  server:
+    build:
+      context: .
+      dockerfile: ./dockers/raspi/server/Dockerfile
+    environment:
+      RAILS_ENV: production
+      TZ: Japan
+    extends:
+      file: ./dockers/raspi/db/password.yml
+      service: password
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/var/www/travel_note
+    networks:
+      docker-net:
+        ipv4_address: 172.25.0.101
+    depends_on:
+      - db
+  db:
+    build:
+      context: .
+      dockerfile: ./dockers/raspi/db/Dockerfile
+    environment:
+      TZ: Japan
+    volumes:
+      - development_db:/var/lib/mysql
+    extends:
+      file: ./dockers/raspi/db/password.yml
+      service: password
+    ports:
+      - '3306:3306'
+    networks:
+      docker-net:
+        ipv4_address: 172.25.0.102
