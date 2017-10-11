@@ -19,24 +19,24 @@ class window.MapHelper
     }
   ]
 
-  @CLUSTER_STYLES = (path = '/assets/map_helper/images', imageName = 'cluster') ->
+  @CLUSTER_STYLES = () ->
     [
       {
-        url: "#{path}/#{imageName}55.png",
+        url: "<%= image_path('clusters/cluster55.png') %>",
         height: 55,
         width: 55,
         anchor: [19, 0],
         textColor: '#fff',
         textSize: 16
       }, {
-        url: "#{path}/#{imageName}75.png",
+        url: "<%= image_path('clusters/cluster75.png') %>",
         height: 75,
         width: 75,
         anchor: [28, 0],
         textColor: '#fff',
         textSize: 20
       }, {
-        url: "#{path}/#{imageName}95.png",
+        url: "<%= image_path('clusters/cluster95.png') %>",
         height: 95,
         width: 95,
         anchor: [38, 0],
