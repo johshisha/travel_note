@@ -1,33 +1,35 @@
-<%= form_with(model: record, local: true) do |form| %>
+<%= form_with(model: record, local: true, class: 'form') do |form| %>
   <%= render 'shared/error_messages', object: form.object %>
   <div class="field">
-    <span class="field_text">*タイトル：</span>
-    <%= form.text_field :title, id: :record_title, class: 'title_field' %>
+    <p class="field_text">*タイトル</p>
+    <%= form.text_field :title, id: :record_title, class: 'title_field form_input' %>
   </div>
-  
+
   <div class="field">
-    <span class="field_text">旅の期間：</span>
+    <p class="field_text">旅の期間</p>
     <%= form.date_field :start_date, id: :record_start_date, class: "date_field datepicker_start", readonly: true, type: 'text', as: :datetime_picker, size: '30' %>
     <span class="field_text">~</span>
     <%= form.date_field :end_date, id: :record_end_date, class: "date_field datepicker_end", readonly: true, type: 'text', as: :datetime_picker %>
   </div>
-  
+
   <div class="field">
-    <span class="field_text">アルバムのURL：</span>
-    <%= form.text_field :url, id: :record_url, class: "url_field" %>
+    <p class="field_text">アルバムのURL</p>
+    <%= form.text_field :url, id: :record_url, class: "url_field form_input" %>
   </div>
-  
+
   <div class="field">
-    <span class="field_text">サムネイル：</span>
-    <%= form.file_field :image, id: :record_image, class: "file_field" %><br>
+    <p class="field_text">サムネイル</p>
+    <%= form.file_field :image, id: :record_image, class: "file_field form_input" %><br>
   </div>
-  
+
   <div class="field">
-    <span class="field_text">*場所：</span>
-    <%= form.text_field :address, class: "address address_field" %>
-    <button type="button" class="map-search-button btn btn-sm">検索
-        <span class="glyphicon glyphicon-search"></span>
-    </button>
+    <p class="field_text">*場所</p>
+    <div class="form_input">
+      <%= form.text_field :address, class: "address address_field" %>
+      <button type="button" class="map-search-button btn btn-sm">検索
+          <span class="glyphicon glyphicon-search"></span>
+      </button>
+    </div>
     <div class="map-canvas" style="height: 0;"
                 data-lat="<%= form.object.latitude %>"
                 data-lng="<%= form.object.longitude %>">
@@ -35,12 +37,12 @@
     <%= form.text_field :latitude, id: :record_latitude, style: 'display:none' %>
     <%= form.text_field :longitude, id: :record_longitude, style: 'display:none' %>
   </div>
-  
+
   <br>
-  
+
   <div class="field">
-    <%= form.label :description, "記録" %>
-    <%= form.text_area :description, id: :record_description, rows: 10 %>
+    <p class="field_text">記録</p>
+    <%= form.text_area :description, id: :record_description, rows: 10, class: 'form_input' %>
   </div>
 
   <div class="actions">
